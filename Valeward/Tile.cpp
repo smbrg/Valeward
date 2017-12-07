@@ -1,23 +1,23 @@
-#include "Player.h"
+#include "Tile.h"
 
 
-
-Player::Player(sf::RenderWindow* window, std::string path)
+Tile::Tile(sf::RenderWindow* window, std::string path, float xpos, float ypos)
 {
 	_window = window;
-	this->SetPosition(0.0f, 0.0f);
+	_position[0] = _position[1] = 0.0f;
+	this->SetPosition(xpos, ypos);
 	this->SetSprite(path);
 }
 
 
-Player::~Player()
+Tile::~Tile()
 {
 	delete _sprite;
 	delete _texture;
 }
 
 
-void Player::SetSprite(std::string path)
+void Tile::SetSprite(std::string path)
 {
 	if (_sprite != nullptr)
 	{
@@ -35,20 +35,15 @@ void Player::SetSprite(std::string path)
 	_sprite = new sf::Sprite(*_texture);
 }
 
-void Player::SetPosition(float xpos, float ypos)
+
+void Tile::SetPosition(float xpos, float ypos)
 {
 	_position[0] = xpos;
 	_position[1] = ypos;
 }
 
-void Player::Move(float xdelta, float ydelta)
+void Tile::Draw()
 {
-	_position[0] += xdelta;
-	_position[1] += ydelta;
-}
-
-void Player::Draw()
-{
-	_sprite->setPosition(_position[0]*32, _position[1]*32);
+	_sprite->setPosition(_position[0], _position[1]);
 	_window->draw(*_sprite);
 }

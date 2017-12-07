@@ -2,16 +2,17 @@
 
 #include "VisualEntity.h"
 
-class Player : public VisualEntity
+#define TILE_SIZE		32
+
+class Tile : public VisualEntity
 {
 public:
-	Player(sf::RenderWindow* window, std::string path);
-	~Player();
+	Tile(sf::RenderWindow* window, std::string path, float xpos, float ypos);
+	~Tile();
 
 	void Draw();
 	void SetSprite(std::string path);
 	void SetPosition(float xpos, float ypos);
-	void Move(float xdelta, float ydelta);
 
 private:
 	sf::RenderWindow* _window;

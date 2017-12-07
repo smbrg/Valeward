@@ -125,9 +125,11 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="VisualEntity.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Player.h" />
