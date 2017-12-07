@@ -1,10 +1,10 @@
 #pragma once
 
-#include "VisualEntity.h"
+#include <SFML/Graphics.hpp>
 
 #define TILE_SIZE		32
 
-class Tile : public VisualEntity
+class Tile
 {
 public:
 	Tile(sf::RenderWindow* window, std::string path, float xpos, float ypos);

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "VisualEntity.h"
+#include <SFML/Graphics.hpp>
 
-class Player : public VisualEntity
+class Player
 {
 public:
 	Player(sf::RenderWindow* window, std::string path);
